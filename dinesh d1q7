@@ -1,0 +1,25 @@
+pencil <- c("box_1","box_2","box_3","box_4","box_5","box_6","box_7","box_8","box_9","box_10")
+> boxes <- c("box_1","box_2","box_3","box_4","box_5","box_6","box_7","box_8","box_9","box_10")
+> pencil <- c(9,25,23,12,11,6,7,8,9,10)
+> pencil_data <- data.frame(boxes=boxes,pencil=pencil)
+> print(pencil_data)
+    boxes pencil
+1   box_1      9
+2   box_2     25
+3   box_3     23
+4   box_4     12
+5   box_5     11
+6   box_6      6
+7   box_7      7
+8   box_8      8
+9   box_9      9
+10 box_10     10
+> mean_value <- mean(pencil)
+> median_value <-median(pencil)
+> mode_value <- as.numeric(names(sort(table(pencil),decreasing = TRUE)[1]))
+> cat("mean:",mean_value,"\n")
+mean: 12 
+> cat("median:",median_value,"\n")
+median: 9.5 
+> cat("mode:",mode_value,"\n")
+mode: 9 
