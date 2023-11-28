@@ -1,0 +1,37 @@
+# Age data
+> ages <- c(13, 15, 16, 16, 19, 20, 20, 21, 22, 22, 25, 25, 25, 25, 30, 33, 33, 35, 35, 35, 35, 36, 40, 45, 46, 52, 70)
+> 
+> # Mean
+> mean_age <- mean(ages)
+> 
+> # Median
+> median_age <- median(ages)
+> 
+> # Mode
+> mode_age <- as.numeric(names(sort(table(ages), decreasing = TRUE)[1]))
+> 
+> # Modality
+> modality <- length(unique(ages))
+> 
+> # Midrange
+> midrange <- (min(ages) + max(ages)) / 2
+> 
+> # Quartiles
+> q1 <- quantile(ages, 0.25)
+> q3 <- quantile(ages, 0.75)
+> 
+> # Print results
+> cat("Mean:", mean_age, "\n")
+Mean: 29.96296 
+> cat("Median:", median_age, "\n")
+Median: 25 
+> cat("Mode:", mode_age, "\n")
+Mode: 25 
+> cat("Modality:", modality, "\n")
+Modality: 17 
+> cat("Midrange:", midrange, "\n")
+Midrange: 41.5 
+> cat("Q1 (First Quartile):", q1, "\n")
+Q1 (First Quartile): 20.5 
+> cat("Q3 (Third Quartile):", q3, "\n")
+Q3 (Third Quartile): 35 
