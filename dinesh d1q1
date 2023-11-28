@@ -1,0 +1,30 @@
+# Define the intervals and frequencies
+> intervals <- c("1-5", "5-15", "15-20", "20-50", "50-80", "80-110")
+> frequencies <- c(200, 450, 300, 1500, 700, 44)
+> 
+> # Create a data frame with the intervals and frequencies
+> data <- data.frame(interval = intervals, frequency = frequencies)
+> 
+> # Function to calculate the weighted median
+> weighted_median <- function(data) {
++   midpoints <- sapply(strsplit(as.character(data$interval), "-"), function(x) mean(as.numeric(x)))
++   total <- sum(data$frequency)
++   cumulative <- cumsum(data$frequency)
++   
++   # Find the interval containing the weighted median
++   interval_index <- which(cumulative >= total / 2)[1]
++   
++   # Calculate the weighted median
++   lower_bound <- as.numeric(strsplit(as.character(data$interval[interval_index]), "-")[[1]][1])
++   upper_bound <- as.numeric(strsplit(as.character(data$interval[interval_index]), "-")[[1]][2])
++   median <- lower_bound + ((total / 2) - sum(data$frequency[1:(interval_index - 1)])) / data$frequency[interval_index] * (upper_bound - lower_bound)
++   
++   return(median)
++ }
+> 
+> # Calculate the weighted median
+> result <- weighted_median(data)
+> 
+> # Print the result
+> cat("Weighted Median:", result, "\n")
+Weighted Median: 32.94 
