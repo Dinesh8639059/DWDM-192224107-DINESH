@@ -1,0 +1,40 @@
+# Given data
+> class_a <- c(76, 35, 47, 64, 95, 66, 89, 36, 84)
+> class_b <- c(51, 56, 84, 60, 59, 70, 63, 66, 50)
+> 
+> # (i) Mean, Median, and Range
+> mean_a <- mean(class_a)
+> median_a <- median(class_a)
+> range_a <- max(class_a) - min(class_a)
+> 
+> mean_b <- mean(class_b)
+> median_b <- median(class_b)
+> range_b <- max(class_b) - min(class_b)
+> 
+> cat("Class A:\n")
+Class A:
+> cat("Mean:", mean_a, "\n")
+Mean: 65.77778 
+> cat("Median:", median_a, "\n")
+Median: 66 
+> cat("Range:", range_a, "\n")
+Range: 60 
+> 
+> cat("Class B:\n")
+Class B:
+> cat("Mean:", mean_b, "\n")
+Mean: 62.11111 
+> cat("Median:", median_b, "\n")
+Median: 60 
+> cat("Range:", range_b, "\n")
+Range: 34 
+> 
+> # (ii) Boxplots
+> par(mfrow = c(1, 2))  # Set up a 1x2 plotting grid
+> 
+> boxplot(class_a, main = "Boxplot - Class A", col = "lightblue", border = "black", horizontal = TRUE)
+> boxplot(class_b, main = "Boxplot - Class B", col = "lightgreen", border = "black", horizontal = TRUE)
+> 
+> # Reset plotting parameters
+> par(mfrow = c(1, 1))
+> 
