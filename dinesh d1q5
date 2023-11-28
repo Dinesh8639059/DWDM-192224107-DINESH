@@ -1,0 +1,38 @@
+ # Given data
+> age <- c(23, 23, 27, 27, 39, 41, 47, 49, 50, 52, 54, 56, 57, 58, 60, 61)
+> percent_fat <- c(9.5, 26.5, 7.8, 17.8, 31.4, 25.9, 27.4, 27.2, 31.2, 34.6, 42.5, 28.8, 33.4, 30.2, 34.1, 32.9, 41.2, 35.7)
+> 
+> # (a) Calculate mean, median, and standard deviation
+> mean_age <- mean(age)
+> median_age <- median(age)
+> sd_age <- sd(age)
+> 
+> mean_percent_fat <- mean(percent_fat)
+> median_percent_fat <- median(percent_fat)
+> sd_percent_fat <- sd(percent_fat)
+> 
+> cat("(a) Age:\n")
+(a) Age:
+> cat("Mean:", mean_age, "\n")
+Mean: 45.25 
+> cat("Median:", median_age, "\n")
+Median: 49.5 
+> cat("Standard Deviation:", sd_age, "\n")
+Standard Deviation: 13.55729 
+> 
+> cat("(a) %Fat:\n")
+(a) %Fat:
+> cat("Mean:", mean_percent_fat, "\n")
+Mean: 28.78333 
+> cat("Median:", median_percent_fat, "\n")
+Median: 30.7 
+> cat("Standard Deviation:", sd_percent_fat, "\n")
+Standard Deviation: 9.254395 
+> 
+> # (b) Draw boxplots
+> par(mfrow = c(1, 2))  # Set up a 1x2 plotting grid
+> boxplot(age, main = "Boxplot of Age", ylab = "Age", col = "lightblue", border = "black")
+> boxplot(percent_fat, main = "Boxplot of %Fat", ylab = "%Fat", col = "lightgreen", border = "black")
+> 
+> # (c) Draw scatter plot
+> plot(age, percent_fat, main = "Scatter Plot of Age vs. %Fat", xlab = "Age", ylab = "%Fat", pch = 16, col = "blue")
