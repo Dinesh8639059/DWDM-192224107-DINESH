@@ -1,0 +1,38 @@
+ # Given data
+> photograph_data <- matrix(c(18, 22, 20, 2, 28, 40, 20, 10, 40), ncol = 3, byrow = TRUE)
+> colnames(photograph_data) <- c("A", "B", "C")
+> rownames(photograph_data) <- c("5-6 years", "7-8 years", "9-10 years")
+> 
+> # (1) Sample covariance between B and C
+> cov_BC <- cov(photograph_data[, "B"], photograph_data[, "C"])
+> 
+> cat("Sample Covariance between B and C:", cov_BC, "\n")
+Sample Covariance between B and C: -20 
+> 
+> # (2) Sample covariance matrix for preferences
+> cov_matrix <- cov(photograph_data)
+> 
+> cat("(2) Sample Covariance Matrix:\n")
+(2) Sample Covariance Matrix:
+> print(cov_matrix)
+          A   B         C
+A  97.33333 -74 -46.66667
+B -74.00000  84 -20.00000
+C -46.66667 -20 133.33333
+> 
+> # (3) Sample correlation between B and C
+> cor_BC <- cor(photograph_data[, "B"], photograph_data[, "C"])
+> 
+> cat("(3) Sample Correlation between B and C:", cor_BC, "\n")
+(3) Sample Correlation between B and C: -0.1889822 
+> 
+> # (4) Sample correlation matrix for preferences
+> cor_matrix <- cor(photograph_data)
+> 
+> cat("(4) Sample Correlation Matrix:\n")
+(4) Sample Correlation Matrix:
+> print(cor_matrix)
+           A          B          C
+A  1.0000000 -0.8183918 -0.4096440
+B -0.8183918  1.0000000 -0.1889822
+C -0.4096440 -0.1889822  1.0000000
